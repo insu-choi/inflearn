@@ -1,6 +1,6 @@
 package com.example.productorderservice1.product;
 
-enum DiscountPolicy {
+public enum DiscountPolicy {
     NONE
 
 }
