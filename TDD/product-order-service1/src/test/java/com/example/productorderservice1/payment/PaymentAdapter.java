@@ -3,7 +3,9 @@ package com.example.productorderservice1.payment;
 import com.example.productorderservice1.order.Order;
 import com.example.productorderservice1.product.DiscountPolicy;
 import com.example.productorderservice1.product.Product;
+import org.springframework.stereotype.Component;
 
+@Component
 class PaymentAdapter implements PaymentPort {
     private final PaymentGateway paymentGateway;
     private final PaymentRepository paymentRepository;
