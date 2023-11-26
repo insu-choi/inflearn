@@ -3,10 +3,7 @@ package com.example.productorderservice1.payment;
 import com.example.productorderservice1.ApiTest;
 import com.example.productorderservice1.order.OrderSteps;
 import com.example.productorderservice1.product.ProductSteps;
-import io.restassured.response.ExtractableResponse;
-import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.HttpStatus;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
