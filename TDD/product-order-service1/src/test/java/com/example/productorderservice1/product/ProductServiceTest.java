@@ -1,5 +1,9 @@
 package com.example.productorderservice1.product;
 
+import com.example.productorderservice1.product.application.port.ProductPort;
+import com.example.productorderservice1.product.application.service.GetProductResponse;
+import com.example.productorderservice1.product.application.service.ProductService;
+import com.example.productorderservice1.product.application.service.UpdateProductRequest;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

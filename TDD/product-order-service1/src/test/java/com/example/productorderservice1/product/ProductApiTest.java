@@ -1,6 +1,7 @@
 package com.example.productorderservice1.product;
 
 import com.example.productorderservice1.ApiTest;
+import com.example.productorderservice1.product.adapter.ProductRepository;
 import io.restassured.RestAssured;
 import io.restassured.response.ExtractableResponse;
 import io.restassured.response.Response;

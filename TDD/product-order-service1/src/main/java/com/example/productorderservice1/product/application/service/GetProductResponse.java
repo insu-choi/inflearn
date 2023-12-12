@@ -1,14 +1,15 @@
-package com.example.productorderservice1.product;
+package com.example.productorderservice1.product.application.service;
 
+import com.example.productorderservice1.product.domain.DiscountPolicy;
 import org.springframework.util.Assert;
 
-record GetProductResponse(
+public record GetProductResponse(
         long id,
         String name,
         int price,
         DiscountPolicy discountPolicy
 ) {
-    GetProductResponse(final long id, final String name, final int price, final DiscountPolicy discountPolicy) {
+    public GetProductResponse(final long id, final String name, final int price, final DiscountPolicy discountPolicy) {
         Assert.notNull(id, "상품 ID는 필수입니다.");
         Assert.hasText(name, "상품명은 필수입니다.");
         // Assert.isTrue(price > 0, "상품 가격은 0보다 커야 합니다.");
