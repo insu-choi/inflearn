@@ -5,6 +5,9 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
+import java.util.Random;
+
+import static org.assertj.core.api.Assertions.*;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 
@@ -64,5 +67,24 @@ public class GameTests {
         String randomNumber = randomBbg.getAnswer();
         log.info("randomNumber {}", randomNumber);
         assertThat(randomNumber.length()).isEqualTo(3);
+    }
+
+    @Test
+    @DisplayName("랜덤 게임")
+    void playRandomGame() {
+        Random r1 = new Random(1L);
+        Random r2 = new Random(2L);
+        Random r3 = new Random(3L);
+        String r1IntStr = Integer.toString(r1.nextInt(10));
+        String r2IntStr = Integer.toString(r2.nextInt(10));
+        String r3IntStr = Integer.toString(r3.nextInt(10));
+        String randomNumber = r1IntStr + r2IntStr + r3IntStr;
+
+        BaseballGame bbg = new BaseballGame(randomNumber);
+        bbg.guess("123");
+        bbg.guess("456");
+        bbg.guess("789");
+        bbg.guess("745");
+        bbg.guess("584");
     }
 }
