@@ -1,7 +1,9 @@
 package com.honeyjam.baseball.domain;
 
+import lombok.Getter;
 import org.springframework.util.Assert;
 
+@Getter
 public class Baseball {
     private int number;
 
@@ -14,7 +16,7 @@ public class Baseball {
         this.number = number;
     }
 
-    public int getNumber() {
-        return this.number;
+    public String getNumberString() {
+        return Integer.toString(number);
     }
 }

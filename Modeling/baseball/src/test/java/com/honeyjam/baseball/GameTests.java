@@ -2,6 +2,7 @@ package com.honeyjam.baseball;
 
 import com.honeyjam.baseball.domain.BaseballGame;
 import lombok.extern.slf4j.Slf4j;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.Assertions.assertThat;
@@ -51,6 +52,17 @@ public class GameTests {
         bbg.guess("789");
         bbg.guess("467");
         bbg.guess("468");
+        assertThatThrownBy(() -> {
+            bbg.guess("123");
+        }).isInstanceOf(IllegalArgumentException.class).hasMessageContaining("You Win");
     }
 
+    @Test
+    @DisplayName("Game 기본 생성자")
+    void randomGame() {
+        BaseballGame randomBbg = new BaseballGame();
+        String randomNumber = randomBbg.getAnswer();
+        log.info("randomNumber {}", randomNumber);
+        assertThat(randomNumber.length()).isEqualTo(3);
+    }
 }

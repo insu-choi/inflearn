@@ -17,6 +17,8 @@ public class Stage {
     public Stage(String answer) {
         Assert.isTrue(answer.length() >= 3, "Stage Answer length >= 3");
         this.answer = answer;
+        this.strike = 0;
+        this.ball = 0;
     }
 
     public boolean is(String target) {
